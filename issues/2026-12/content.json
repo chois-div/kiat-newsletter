@@ -1,0 +1,48 @@
+{
+  "_설명": "12월호 내용 (임시). 시안 확정 전이라 문구·링크는 TODO, 이미지는 11월호 것을 임시로 복사해 둠. 확정되면 Figma PC/MO 프레임에서 다시 내보내기.",
+  "year": 2026,
+  "month": 12,
+  "vol": 87,
+  "hero": {
+    "deco": "오늘의 키앗",
+    "subtitle": "TODO 히어로 부제목",
+    "title": "TODO 히어로 제목",
+    "link": "TODO",
+    "image": "hero.jpg",
+    "alt": "TODO 히어로 이미지 설명"
+  },
+  "cards": [
+    {
+      "label": "오늘의 키앗",
+      "category": "KIAT 소식",
+      "color": "b1",
+      "link": "TODO",
+      "image": "b01.jpg",
+      "alt": "TODO 카드1 이미지 설명"
+    },
+    {
+      "label": "기회를 키앗",
+      "category": "KIAT 공고",
+      "color": "b2",
+      "link": "TODO",
+      "image": "b02.jpg",
+      "alt": "TODO 카드2 이미지 설명"
+    },
+    {
+      "label": "트렌드를 키앗",
+      "category": "KIAT 산업 트렌드",
+      "color": "b3",
+      "link": "TODO",
+      "image": "b03.jpg",
+      "alt": "TODO 카드3 이미지 설명"
+    },
+    {
+      "label": "함께 키앗",
+      "category": "KIAT 이벤트",
+      "color": "b5",
+      "link": "TODO",
+      "image": "b04.jpg",
+      "alt": "TODO 카드4 이미지 설명"
+    }
+  ]
+}
