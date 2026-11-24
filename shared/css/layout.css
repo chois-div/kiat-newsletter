@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+* {letter-spacing: -0.7px;}
+.wrap {max-width:1240px; margin:0 auto;}
+#header {position: relative; background-color: #fff; z-index: 10;}
+
+#header:before {display:none; content:''; position: fixed; left:0; right:0; top:0; height: 400; background-color: #fff; z-index: -1; }
+#header.on:before {display:block;}
+#header .wrap {display: flex; gap: 20px; padding: 83px 28px 0; position:relative;}
+#header .h_logo {width: 415px;}
+#header .h_logo .slogan {display: inline-block; margin-bottom:10px; padding: 0 15px; line-height: 44px; background-color: #06377b; color: #fff; font-weight: 700; font-size: 30px; border-radius: 22px;}
+#header .h_txt p {font-size: 30px; font-weight: 700; font-size: 30px; line-height:1; color:#06377b;}
+#header .nav_area {margin-left:auto;}
+#header .h_link {position:absolute; right:0; top:70px; display: flex;}
+#header .h_link a {padding: 0 10px; position:relative;}
+#header .h_link a:first-child::after {display:none;}
+#header .h_link a:after {content:''; position:absolute; width:1px; height: 12px; left:0; top: 1.5px; background-color:#999;}
+#header .h_link a:hover {text-decoration:underline}
+
+
+
+.nav_btn {display: none; width: 50px; height: 50px; background: transparent; border: none; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; padding: 0; position: relative; z-index: 1002; }
+.nav_btn span { width: 28px; height: 4px; background: #06377b; border-radius: 1px; transition: all 0.3s ease; display: block; }
+.nav_area.active .nav_btn span {background-color:#fff;}
+.nav_area.active .nav_btn span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); transform-origin: center; }
+.nav_area.active .nav_btn span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+.nav_area.active .nav_btn span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); transform-origin: center; }
+#nav > ul {display: none;}
+#nav .n_tit {text-align: right;}
+#nav .n_tit p {font-size: 46px; font-weight: 700; line-height:1; margin-bottom: 5px;}
+#nav .n_tit span {font-size: 26px; font-weight: 500; line-height:1;}
+#nav .n_link {display:flex; justify-content: right; gap:20px; align-items: center; margin-top: 19px;}
+#nav .n_link .nl_btn {display:block; width: 105px; line-height: 38px; border:1px solid #000; font-size: 16px; font-weight: 700; text-align: center;}
+#nav .n_link .nl_link {display: flex; align-items: center; gap:10px}
+
+#footer {background-color: #06377B; padding: 52px 0;}
+#footer .wrap {display: flex; justify-content: space-between;}
+#footer .wrap .f_info {display: flex; gap:64px; align-items: center; min-height: 80px; padding-left: 105px;}
+#footer .wrap .f_info p {color:#fff; line-height: 1.4;}
+#footer .wrap .f_info p:last-child {margin-top: 15px;}
+#footer .wrap .f_link {margin-left:auto; display: flex; gap:10px; align-items: center;}
+
+
+.cw {color:#fff !important;}
+
+
+/* 컨텐츠 */
+#main {padding-top:23px; padding-bottom:50px;}
+#main .m_tit {text-align: center;}
+#main .m_tit .mt_deco {width:190px; line-height: 48px; border:1px solid #000; margin:0 auto; font-size: 26px; font-weight: 700; margin-bottom:3px;}
+#main .m_tit .mt_txt {font-size: 60px; line-height:71px; font-weight: 400;}
+#main .m_tit .mt_tit {font-size: 60px; line-height:71px; margin-bottom:32px; font-weight: 400;}
+#main .m_tit .mt_tit b {color:#06377b; font-weight: 800;}
+.m_hero {display:block; border:4px solid #06377B; overflow: hidden; border-radius: 20px; aspect-ratio: 1240 / 423;}
+.m_hero img {width: 100%; height:100%; object-fit: cover; object-position: center;}
+.m_link {display:flex; gap:20px; flex-wrap: wrap; margin-top: 20px;}
+.ml_item {flex-basis: calc(50% - 10px); display:block;}
+.ml_item .ml_tit {border:4px solid #06377B; border-radius: 20px; box-sizing: border-box; display: flex; align-items: center; height: 77px; padding: 0 20px; color:#fff; gap: 30px; background-image: url('./../images/arrow_forward.png'); background-repeat: no-repeat; background-position: right 20px center;}
+.ml_item .ml_tit p {font-size: 32px; font-weight: 700; color:#fff;}
+.ml_item .ml_tit span {font-size: 20px; color:#fff;}
+
+.b1 {background-color: #06377B;}
+.b2 {background-color: #F68A1E;}
+.b3 {background-color: #A4D846;}
+.b3 p {color:#06377B !important}
+.b3 span {color:#06377B !important}
+.b4 {background-color: #416E8F;}
+.b5 {background-color: #B22D29;}
+
+.ml_item .ml_img {width: 100%; aspect-ratio: 610 / 337; border:4px solid #06377B; border-radius: 20px; margin-top:12px; overflow: hidden;}
+.ml_item .ml_img img {width: 100%;   height: 100%;   object-fit: cover;} 
+
+.ml_item.t2 .ml_img {aspect-ratio: 610 / 762;}
+.ml_img.t3 {aspect-ratio: 1240 / 499; }
+
+@media (max-width: 1320px) {
+    .wrap {padding: 0 20px;}
+    #header .wrap {padding: 30px 20px;}
+    #header .h_logo {width: 300px}
+    #header .h_logo .slogan {line-height: 34px; font-size: 20px;}
+    #header .h_txt p {font-size: 24px}
+    #header .h_link {top: 40px; right: 20px}
+
+    #main {padding-top: 20px}
+    #contents {padding-top: 150px;}
+    #contents {padding-bottom:30px;}
+
+}
+
+@media (max-width: 1190px) {
+    #header .wrap {align-items: center;}
+    .nav_area.active {position:fixed; left:0; top:0; right:0; bottom:0; background-color: rgba(0, 0, 0, 0.7);}
+    .nav_area.active .nav_btn {display:flex;}
+    .nav_area.active .nav_btn {position:fixed; right: 300px; top: 30px;}
+    .nav_area.active #nav {position:fixed; right:0; top:0; bottom:0; width:300px; background-color:#fff; overflow-y:auto;}
+    .nav_area.active #nav > ul {display:block;}
+    .nav_area.active #nav .dep2 {position:inherit; top:inherit; display:block; padding:0; min-height:auto;}
+    .nav_area.active #nav .dep1_btn {width:100%; border-radius:0; text-align:left; background-color:#fff; color:#ba1b21; font-size: 24px; border-top:2px solid #ba1b21; line-height: 1.2; padding:15px 20px;}
+    .nav_area.active #nav .dep2 a {text-align:left; padding: 15px 20px; border-top:1px solid #ddd;}
+    #nav {display:none;}
+    .nav_area.active #nav {display:block; padding: 20px;}
+    .nav_btn {display:flex;}
+
+    #nav > ul {border-top:1px solid #ddd; margin-top:30px; margin-bottom:20px;}
+    #nav > ul a {display: block; line-height: 50px; border-bottom:1px solid #ddd; font-size: 18px; font-weight: 500;}
+
+    #nav .n_tit {text-align: left;}
+    #nav .n_tit p {font-size: 20px;}
+    #nav .n_tit span {font-size: 22px;}
+
+    #header .h_link {position:relative; display:block; top:inherit; right:inherit; padding: 20px; text-align:right;}
+    #header .h_link a {border:1px solid #ba1b21; border-radius: 30px; line-height: 30px; display:inline-block; color:#ba1b21; font-weight: 500;}
+    #header .h_link a:after {display:none;}
+    #footer .wrap {display:block; text-align:center;}
+    #footer .wrap .f_info {display:block; padding-left:0; min-height:0;}
+    #footer .f_info h1 {margin-bottom:20px;}
+    #footer .wrap .f_link {margin-top:20px; justify-content:center;}
+
+    #main .m_tit .mt_deco {font-size: 20px; line-height: 40px;}
+    #main .m_tit .mt_tit {font-size: 40px; line-height:1.2}
+    #main .m_tit .mt_txt {font-size: 40px; line-height:1.2}
+    .ml_item .ml_tit {height: auto; background-size: 30px; display: block; line-height:1.4; padding: 10px 30px 10px 20px ;}
+    .ml_item .ml_tit p {font-size: 24px;}
+
+    
+}
+
+@media (max-width: 768px) {
+    .m_link {display: block; margin-top: 0;}
+    .ml_item {margin-top:20px;}
+}
+
+
+@media (max-width: 600px) {
+    #contents {padding-top: 105px;}
+    #header .wrap {padding: 20px}
+    
+    #header .h_logo .slogan {line-height: 24px; font-size: 16px}
+    #header .h_txt p {font-size: 18px}
+
+    #main .m_tit .mt_tit {font-size: 30px;}
+    #main .m_tit .mt_txt {font-size: 24px;}
+    #main .m_tit .mt_deco {font-size: 18px; width: 150px;}
+    #main {padding-bottom: 40px; padding-top:20px;}
+    .ml_item .ml_tit p {font-size: 20px;}
+    .ml_item .ml_tit span {font-size: 16px;}
+
+ 
+}
+
+@media (max-width: 420px) {
+    #header .wrap {gap: 15px}
+    #header .h_logo .slogan {padding: 0 10px; font-size: 14px; margin-bottom:5px}
+    #header .h_logo {width: 130px}
+    #header .h_txt p {font-size: 15px}
+    #contents {padding-top: 90px;}
+}

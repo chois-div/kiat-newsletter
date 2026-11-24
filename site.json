@@ -1,0 +1,13 @@
+{
+  "_설명": "매 호 공통 링크. 바뀔 때만 수정하세요.",
+  "links": {
+    "home": "https://www.kiat.or.kr/",
+    "archive": "https://www.kiat.or.kr/front/board/boardContentsListPage.do?board_id=97&MenuId=98519cb01fd645ab9b3d5d38d08641f9",
+    "facebook": "https://www.facebook.com/kiat.or.kr",
+    "instagram": "https://www.instagram.com/kiat.or.kr/",
+    "youtube": "https://www.youtube.com/user/kiat4u",
+    "blog": "https://blog.naver.com/kiat_tech"
+  },
+  "email_image_base": "https://chois-div.github.io/kiat-newsletter/email/",
+  "web_base": "https://chois-div.github.io/kiat-newsletter/"
+}

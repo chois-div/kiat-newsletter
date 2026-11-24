@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KIAT NEWS LETTER {{ year }}. {{ month2 }}. VOL {{ vol }}</title>
+</head>
+<body style="margin:0;padding:0;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td style="text-align:center;">
+  <table width="800" border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr>
+    <td style="text-align:left;"><img src="{{ email.image_url }}" alt="KIAT NEWS LETTER {{ year }}. {{ month2 }}. VOL {{ vol }}" width="800" height="1817" style="display:block;border:0;" usemap="#kiat{{ vol }}" id="newsletter"/></td>
+  </tr>
+  </table>
+</td></tr>
+</table>
+{# 좌표는 Figma 'MO' 프레임(800x1817) 레이아웃 기준. 레이아웃이 바뀌면 여기만 고치면 됨 #}
+<map name="kiat{{ vol }}">
+  <area shape="rect" alt="KIAT" coords="40,88,300,120" href="{{ links.home }}" target="_blank" />
+  <area shape="rect" alt="지난 호 보기" coords="587,142,651,165" href="{{ links.archive }}" target="_blank" />
+  <area shape="rect" alt="페이스북" coords="666,143,688,164" href="{{ links.facebook }}" target="_blank" />
+  <area shape="rect" alt="인스타그램" coords="691,143,713,164" href="{{ links.instagram }}" target="_blank" />
+  <area shape="rect" alt="유튜브" coords="716,143,738,164" href="{{ links.youtube }}" target="_blank" />
+  <area shape="rect" alt="블로그" coords="744,143,766,164" href="{{ links.blog }}" target="_blank" />
+  <area shape="rect" alt="{{ hero.alt }}" coords="43,356,759,599" href="{{ hero.link }}" target="_blank" />
+  <area shape="rect" alt="{{ cards[0].label }}" coords="44,616,400,1108" href="{{ cards[0].link }}" target="_blank" />
+  <area shape="rect" alt="{{ cards[1].label }}" coords="404,616,760,1108" href="{{ cards[1].link }}" target="_blank" />
+  <area shape="rect" alt="{{ cards[2].label }}" coords="40,1128,396,1618" href="{{ cards[2].link }}" target="_blank" />
+  <area shape="rect" alt="{{ cards[3].label }}" coords="402,1128,758,1618" href="{{ cards[3].link }}" target="_blank" />
+  <area shape="rect" alt="지난 호 보기" coords="513,1664,617,1701" href="{{ links.archive }}" target="_blank" />
+  <area shape="rect" alt="페이스북" coords="623,1667,653,1697" href="{{ links.facebook }}" target="_blank" />
+  <area shape="rect" alt="유튜브" coords="657,1667,687,1697" href="{{ links.youtube }}" target="_blank" />
+  <area shape="rect" alt="인스타그램" coords="691,1667,721,1697" href="{{ links.instagram }}" target="_blank" />
+  <area shape="rect" alt="블로그" coords="725,1666,757,1698" href="{{ links.blog }}" target="_blank" />
+</map>
+</body>
+</html>

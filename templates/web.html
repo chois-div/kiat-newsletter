@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>KIAT 웹진 {{ year }}. {{ month2 }}. VOL {{ vol }}</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KIAT 웹진에서 한국산업기술진흥원의 다양하고 유용한 정보를 확인해보세요">
+  <meta name="keywords" content="KIAT, 웹진, 한국산업기술진흥원, 한국산업기술진흥원 웹진">
+  <meta name="author" content="KIAT, 한국산업기술진흥원">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ web_url }}">
+  <meta property="og:site_name" content="한국산업기술진흥원 웹진">
+  <meta property="og:title" content="한국산업기술진흥원 웹진 {{ year }}. {{ month2 }}. VOL {{ vol }}">
+  <meta property="og:description" content="{{ hero.title }}">
+  {% if og_image %}<meta property="og:image" content="{{ og_image }}">{% endif %}
+  <meta name="format-detection" content="telephone=no">
+  <link rel="stylesheet" type="text/css" href="css/init.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div class="wrap">
+      <div>
+        <h1 class="h_logo">
+          <a href="{{ links.home }}" target="_blank"><img src="./images/logo.png" alt="KIAT 한국산업기술진흥원"></a>
+        </h1>
+      </div>
+      <div class="nav_area">
+        <nav id="nav">
+          <div class="n_tit">
+            <p>NEWS LETTER</p>
+            <span>{{ year }}. {{ month2 }}. VOL {{ vol }}</span>
+          </div>
+          <ul>
+            {% for c in cards %}<li><a target="_blank" href="{{ c.link }}">{{ c.category }}</a></li>
+            {% endfor %}
+          </ul>
+          <div class="n_link">
+            <a href="{{ links.archive }}" target="_blank" class="nl_btn">지난 호 보기</a>
+            <ul class="nl_link">
+              <li><a href="{{ links.facebook }}" target="_blank"><img src="./images/icon-fb.png" alt="페이스북" /></a></li>
+              <li><a href="{{ links.instagram }}" target="_blank"><img src="./images/icon-insta.png" alt="인스타그램" /></a></li>
+              <li><a href="{{ links.youtube }}" target="_blank"><img src="./images/icon-yt.png" alt="유튜브" /></a></li>
+              <li><a href="{{ links.blog }}" target="_blank"><img src="./images/icon-blog.png" alt="블로그" /></a></li>
+            </ul>
+          </div>
+        </nav>
+        <button class="nav_btn" aria-label="메뉴 열기">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <div class="wrap">
+      <div class="m_tit">
+        <p class="mt_deco">{{ hero.deco }}</p>
+        <p class="mt_txt">{{ hero.subtitle }}</p>
+        <p class="mt_tit"><b>{{ hero.title }}</b></p>
+      </div>
+      <a href="{{ hero.link }}" target="_blank" class="m_hero"><img src="./images/{{ hero.image }}" alt="{{ hero.alt }}" /></a>
+      {% for row in cards|batch(2) %}
+      <div class="m_link">
+        {% for c in row %}
+        <div class="ml_item">
+          <a href="{{ c.link }}" target="_blank" class="ml_item t2">
+            <div class="ml_tit {{ c.color }}">
+              <p>{{ c.label }}</p>
+              <span>{{ c.category }}</span>
+            </div>
+            <div class="ml_img">
+              <img src="./images/{{ c.image }}" alt="{{ c.alt }}">
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+  <footer id="footer">
+    <div class="wrap">
+      <div class="f_info">
+        <h1><img src="./images/f_logo.png" alt="한국산업기술진흥원" /></h1>
+        <div>
+          <p>06152 서울 강남구 테헤란로 305 한국기술센터 2~7층, 12~14층, 16~17층</p>
+          <p>06151 서울 강남구 테헤란로 309 삼성제일빌딩 4층, 9층</p>
+          <p>TEL. 02-6009-3000</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

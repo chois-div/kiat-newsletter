@@ -1,0 +1,48 @@
+{
+  "_설명": "11월호 내용. 링크는 Figma PC 프레임의 프로토타입 링크에서 가져옴.",
+  "year": 2026,
+  "month": 11,
+  "vol": 86,
+  "hero": {
+    "deco": "오늘의 키앗",
+    "subtitle": "기업의 도약과 지역의 활력을 이끈다!",
+    "title": "KIAT 2027~2031 중장기 경영목표",
+    "link": "https://blog.naver.com/PostView.naver?blogId=kiat_tech&logNo=224471383634&redirect=Dlog",
+    "image": "hero.jpg",
+    "alt": "2027~2031 KIAT 중장기 경영목표"
+  },
+  "cards": [
+    {
+      "label": "오늘의 키앗",
+      "category": "KIAT 소식",
+      "color": "b1",
+      "link": "https://blog.naver.com/kiat_tech/224473996160",
+      "image": "b01.jpg",
+      "alt": "400kg 김장김치를 이웃에게 전했어요 - KIAT, 철원 버들골마을 김장 나눔 봉사활동"
+    },
+    {
+      "label": "기회를 키앗",
+      "category": "KIAT 공고",
+      "color": "b2",
+      "link": "https://blog.naver.com/kiat_tech/224479333959",
+      "image": "b02.jpg",
+      "alt": "잠자던 특허, 우리 회사가 받아요 - 2026년 공공연구기관·대학 기술나눔 신청 접수"
+    },
+    {
+      "label": "트렌드를 키앗",
+      "category": "KIAT 산업 트렌드",
+      "color": "b3",
+      "link": "https://blog.naver.com/kiat_tech/224484491330",
+      "image": "b03.jpg",
+      "alt": "반도체 생산의 지도와 공급망 대응 방안"
+    },
+    {
+      "label": "함께 키앗",
+      "category": "KIAT 이벤트",
+      "color": "b5",
+      "link": "https://blog.naver.com/kiat_tech/224472654259",
+      "image": "b04.jpg",
+      "alt": "2026 KIAT 만족도 조사 - 설문에 참여해주신 분들께는 추첨을 통해 선물을 드립니다"
+    }
+  ]
+}
