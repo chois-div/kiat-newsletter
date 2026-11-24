@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>EOS 인포그래픽 (CEO 혁신 프롬프트 2)</title>
+<!-- 웹진 본문 폭 1194px 기준. 2배로 캡처해서 images/ceo/eos.png 로 쓴다. -->
+<style>
+@font-face {font-family:'Pretendard'; font-weight:400; src:url(../fonts/Pretendard-Regular.subset.woff2) format('woff2');}
+@font-face {font-family:'Pretendard'; font-weight:500; src:url(../fonts/Pretendard-Medium.subset.woff2) format('woff2');}
+@font-face {font-family:'Pretendard'; font-weight:700; src:url(../fonts/Pretendard-Bold.subset.woff2) format('woff2');}
+@font-face {font-family:'Pretendard'; font-weight:800; src:url(../fonts/Pretendard-ExtraBold.subset.woff2) format('woff2');}
+:root { --g: #92d050; --gd: #5e9a22; --gl: #eef7e4; --ink: #262626; --mute: #6d6d6d; --line: #dfe9d3; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #fff; font-family: 'Pretendard', sans-serif; color: var(--ink); letter-spacing: -0.025em; word-break: keep-all; }
+.info { width: 1194px; padding: 64px 60px 60px; background: #fff; border-radius: 30px; border: 2px solid var(--line); }
+
+.head { text-align: center; }
+.pill { display: inline-block; padding: 8px 26px; border-radius: 99px; background: var(--g); color: #fff; font-size: 24px; font-weight: 800; letter-spacing: 0; }
+.head h1 { margin-top: 18px; font-size: 58px; font-weight: 800; line-height: 1.2; }
+.head h1 em { font-style: normal; color: var(--g); }
+.head .lead { margin-top: 10px; font-size: 26px; font-weight: 500; color: var(--mute); }
+.def { margin: 28px auto 0; display: inline-flex; gap: 14px; align-items: center; padding: 14px 26px; border-radius: 16px; background: var(--gl); font-size: 21px; font-weight: 500; }
+.def b { color: var(--gd); font-weight: 800; }
+
+.sec { margin-top: 52px; }
+.sec h2 { display: flex; align-items: center; gap: 14px; font-size: 32px; font-weight: 800; }
+.sec h2 .n { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--g); color: #fff; font-size: 24px; display: flex; align-items: center; justify-content: center; letter-spacing: 0; }
+.sec h2 small { margin-left: auto; font-size: 20px; font-weight: 500; color: var(--mute); }
+.body { margin-top: 22px; }
+
+/* 1. 선도사례 */
+.refs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.ref { padding: 22px 18px; border-radius: 18px; border: 2px solid var(--line); text-align: center; }
+.ref .who { font-size: 20px; font-weight: 700; color: var(--mute); }
+.ref .what { margin-top: 8px; font-size: 25px; font-weight: 800; line-height: 1.25; }
+.ref .what span { display: block; font-size: 19px; font-weight: 500; color: var(--gd); margin-top: 4px; }
+.arrow-note { margin-top: 16px; text-align: center; font-size: 22px; font-weight: 700; }
+.arrow-note b { color: var(--gd); }
+
+/* 2. 진단지 */
+.survey { display: grid; grid-template-columns: 330px 1fr; gap: 24px; align-items: stretch; }
+.big { border-radius: 22px; background: var(--g); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 26px; }
+.big .num { font-size: 76px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+.big .num small { font-size: 34px; }
+.big .sep { width: 60%; height: 2px; background: rgba(255,255,255,.6); margin: 16px 0; }
+.big .cap { font-size: 21px; font-weight: 700; text-align: center; line-height: 1.4; }
+.areas { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.area { display: flex; align-items: center; gap: 12px; padding: 15px 18px; border-radius: 14px; background: var(--gl); font-size: 23px; font-weight: 700; }
+.area i { font-style: normal; flex: none; width: 34px; height: 34px; border-radius: 50%; background: #fff; color: var(--gd); font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; letter-spacing: 0; }
+.area.etc { background: #f4f4f4; color: var(--mute); }
+
+/* 3. 비교 */
+.vs { display: grid; grid-template-columns: 1fr 70px 1fr; align-items: stretch; }
+.card { border-radius: 22px; padding: 26px 28px; }
+.card.old { background: #f4f4f4; }
+.card.new { background: var(--gl); border: 3px solid var(--g); }
+.card .tag { font-size: 20px; font-weight: 800; color: var(--mute); }
+.card.new .tag { color: var(--gd); }
+.card h3 { margin-top: 4px; font-size: 30px; font-weight: 800; }
+.card ul { margin-top: 14px; list-style: none; display: grid; gap: 10px; }
+.card li { font-size: 22px; font-weight: 500; padding-left: 26px; position: relative; line-height: 1.35; }
+.card li::before { content: ''; position: absolute; left: 4px; top: 11px; width: 10px; height: 10px; border-radius: 50%; background: #b5b5b5; }
+.card.new li::before { background: var(--g); }
+.card li b { font-weight: 800; }
+.vs .mid { display: flex; align-items: center; justify-content: center; }
+.vs .mid span { width: 52px; height: 52px; border-radius: 50%; background: var(--g); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800; }
+
+/* 4. 개선과제 */
+.terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.term { border-radius: 22px; overflow: hidden; border: 2px solid var(--line); }
+.term .top { padding: 16px 20px; color: #fff; }
+.term:nth-child(1) .top { background: #b4dd8a; }
+.term:nth-child(2) .top { background: var(--g); }
+.term:nth-child(3) .top { background: var(--gd); }
+.term .top b { display: block; font-size: 30px; font-weight: 800; }
+.term .top span { font-size: 20px; font-weight: 700; opacity: .95; }
+.term p { padding: 18px 20px 22px; font-size: 23px; font-weight: 700; line-height: 1.35; }
+.ceo { margin-top: 14px; padding: 16px; border-radius: 16px; background: var(--ink); color: #fff; text-align: center; font-size: 23px; font-weight: 700; }
+.ceo b { color: var(--g); }
+
+/* 5. 일정 */
+.flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.step { text-align: center; position: relative; padding: 0 8px; }
+.step .dot { width: 92px; height: 92px; margin: 0 auto; border-radius: 50%; background: var(--gl); border: 3px solid var(--g); display: flex; align-items: center; justify-content: center; font-size: 25px; font-weight: 800; color: var(--gd); position: relative; z-index: 1; letter-spacing: -0.04em; }
+.step:not(:last-child)::after { content: ''; position: absolute; top: 46px; left: calc(50% + 46px); right: calc(-50% + 46px); height: 3px; background: var(--g); }
+.step b { display: block; margin-top: 14px; font-size: 23px; font-weight: 800; }
+.step span { display: block; margin-top: 4px; font-size: 19px; font-weight: 500; color: var(--mute); line-height: 1.35; }
+.loop { margin-top: 22px; text-align: center; font-size: 21px; font-weight: 700; color: var(--gd); }
+.foot { margin-top: 40px; padding-top: 22px; border-top: 2px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 19px; color: var(--mute); font-weight: 500; }
+.foot b { color: var(--ink); font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="info" id="info">
+  <div class="head">
+    <span class="pill">RE:Boot HRDK</span>
+    <h1>공단 최초 <em>직원인식조사(EOS)</em> 도입</h1>
+    <p class="lead">직원의 목소리로 조직을 진단하고, 함께 개선합니다</p>
+    <p class="def"><b>EOS</b> Employee Opinion Survey · 조직운영 전반에 대한 구성원의 인식을 정례적으로 진단하는 조사</p>
+  </div>
+
+  <section class="sec">
+    <h2><span class="n">1</span>국내외 선도사례를 참고해 설계했어요</h2>
+    <div class="body">
+      <div class="refs">
+        <div class="ref"><p class="who">삼성전자</p><p class="what">조직건강도 진단<span>SCI</span></p></div>
+        <div class="ref"><p class="who">LG전자</p><p class="what">LG Way<br>Survey</p></div>
+        <div class="ref"><p class="who">영국 정부</p><p class="what">공무원 인식조사<span>Civil Service People Survey</span></p></div>
+        <div class="ref"><p class="who">도요타자동차</p><p class="what">근본원인 분석<span>5Why</span></p></div>
+      </div>
+      <p class="arrow-note">진단에 그치지 않고 <b>개선 → 재진단</b>까지 이어지는 환류 구조</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">2</span>공단 맞춤형 진단지<small>외부 전문기관 검증</small></h2>
+    <div class="body survey">
+      <div class="big">
+        <p class="num">7<small>개 영역</small></p>
+        <span class="sep"></span>
+        <p class="num">80<small>문항</small></p>
+        <p class="cap" style="margin-top:16px">자격검정 업무·본부-소속기관 간<br>소통 등 공단 특화 문항 포함</p>
+      </div>
+      <div class="areas">
+        <p class="area"><i>1</i>인적자원관리</p>
+        <p class="area"><i>2</i>인적자원개발</p>
+        <p class="area"><i>3</i>혁신 및 노동환경</p>
+        <p class="area"><i>4</i>리더십과 소통 협력</p>
+        <p class="area"><i>5</i>노사관계 및 신뢰</p>
+        <p class="area"><i>6</i>조직성과</p>
+        <p class="area etc"><i>7</i>기타(직원 의견)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">3</span>이렇게 달라져요</h2>
+    <div class="body vs">
+      <div class="card old">
+        <p class="tag">2024</p>
+        <h3>조직문화 진단</h3>
+        <ul>
+          <li>전 직원의 <b>15%(294명)</b>만 참여</li>
+          <li>한 번으로 끝난 <b>일회성</b> 조사</li>
+          <li>결과 공유에서 마무리</li>
+        </ul>
+      </div>
+      <div class="mid"><span>→</span></div>
+      <div class="card new">
+        <p class="tag">2026</p>
+        <h3>직원인식조사 EOS</h3>
+        <ul>
+          <li><b>전 임직원 참여</b>가 원칙</li>
+          <li>매년 같은 핵심 문항을 <b>반복 측정</b></li>
+          <li><b>개선과제 발굴·이행점검</b>까지 연결</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">4</span>단·중·장기 개선과제로 나눠 추진해요</h2>
+    <div class="body">
+      <div class="terms">
+        <div class="term"><div class="top"><b>단기</b><span>6개월 이내</span></div><p>즉시 바꿀 수 있는<br>관행·소통 방식</p></div>
+        <div class="term"><div class="top"><b>중기</b><span>6개월 ~ 1년</span></div><p>업무 프로세스와<br>협업구조</p></div>
+        <div class="term"><div class="top"><b>장기</b><span>1년 이상</span></div><p>인사·보상·조직문화 등<br>제도 개선</p></div>
+      </div>
+      <p class="ceo">이행 상황은 <b>이사장 주재 전사 점검회의</b>에서 직접 챙깁니다</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2><span class="n">5</span>추진 일정</h2>
+    <div class="body">
+      <div class="flow">
+        <div class="step"><p class="dot">11월</p><b>진단 실시</b><span>외부 전문기관 통한<br>익명 조사</span></div>
+        <div class="step"><p class="dot">12월</p><b>결과 분석</b><span>집단별 교차분석,<br>개선계획 수립</span></div>
+        <div class="step"><p class="dot">이후</p><b>개선과제 이행</b><span>영역별 소관부서<br>과제 발굴·실행</span></div>
+        <div class="step"><p class="dot">이듬해</p><b>재진단</b><span>같은 핵심지표로<br>개선 효과 검증</span></div>
+      </div>
+      <p class="loop">미흡한 과제는 보완하고, 새로운 현안은 추가 과제로 반영</p>
+    </div>
+  </section>
+
+  <div class="foot"><span>“EOS는 직원의 목소리로 공단의 체질을 바꾸는 첫걸음” — <b>이병훈 이사장</b></span><b>HRDK 한국산업인력공단</b></div>
+</div>
+</body>
+</html>
