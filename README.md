@@ -14,6 +14,7 @@
    - **PC** 프레임의 히어로와 카드 이미지 → `images/hero.jpg`, `b01~b04.jpg`
    - **MO** 프레임 전체(800×1817) → `email/kiat202612.jpg`
 4. GitHub에 올린다. 반영되면 이메일 HTML 주소의 소스를 발송 시스템에 붙여넣는다.
+5. `python3 build.py 2026-12`로 만든 `dist/KIAT_웹진_Vol87.zip`을 KIAT에 전달한다. KIAT가 `kiat.or.kr/files/ebook/Vol87/`에 그대로 올린다 (공식 웹진 주소).
 
 로컬에서 미리 확인하려면 `python3 build.py 2026-12`를 실행한다 (최초 1회 `pip install jinja2` 필요). `TODO`로 남은 링크나 빠진 이미지가 있으면 경고가 나온다.
 

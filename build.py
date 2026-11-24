@@ -35,13 +35,15 @@ def build_issue(issue: str) -> tuple[dict, list[str]]:
     site = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
 
     y, m = content["year"], content["month"]
+    official = site.get("official_web_pattern", "").format(vol=content["vol"]) or (
+        f"{site['web_base']}{issue}/" if site["web_base"] else "")
     email_img = f"kiat{y}{m:02d}.jpg"
     ctx = {
         **content,
         "month2": f"{m:02d}",
         "links": site["links"],
-        "web_url": f"{site['web_base']}{issue}/" if site["web_base"] else "",
-        "og_image": f"{site['web_base']}{issue}/images/{content['hero']['image']}" if site["web_base"] else "",
+        "web_url": official,
+        "og_image": f"{official}images/{content['hero']['image']}" if official else "",
         "email": {"image_url": f"{site['email_image_base']}{email_img}", "image_file": email_img},
     }
 
@@ -72,9 +74,17 @@ def build_issue(issue: str) -> tuple[dict, list[str]]:
     email_name = f"kiat_뉴스레터_{str(y)[2:]}.{m:02d}.html"
     (dist / email_name).write_text(env.get_template("email.html").render(ctx), encoding="utf-8")
 
+    # KIAT 전달용: VolNN/ 폴더째 압축 (kiat.or.kr/files/ebook/VolNN/ 에 그대로 업로드)
+    vol_dir = f"Vol{content['vol']}"
+    tmp = dist / "_pack"
+    shutil.copytree(web, tmp / vol_dir)
+    shutil.make_archive(str(dist / f"KIAT_웹진_{vol_dir}"), "zip", root_dir=tmp, base_dir=vol_dir)
+    shutil.rmtree(tmp)
+
     print(f"[{issue}] 웹진: {web / 'index.html'}")
     print(f"[{issue}] 이메일: {dist / email_name}")
     print(f"[{issue}] 이메일 이미지 주소: {ctx['email']['image_url']}")
+    print(f"[{issue}] KIAT 전달용: {dist / f'KIAT_웹진_{vol_dir}.zip'}  →  {official}")
     ctx["_email_name"] = email_name
     return ctx, problems
 
