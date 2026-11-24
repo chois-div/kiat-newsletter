@@ -1,0 +1,176 @@
+/* HRDK 웹진 공통 스타일
+   Figma PC 프레임(1440px) 기준. --u = 디자인 1px.
+   1440px 이상은 원본 크기, 그보다 좁으면 비율대로 줄어들고, 768px 미만은 한 줄로 쌓인다. */
+@font-face {font-family:'Pretendard'; font-weight:500; font-display:swap; src: local('Pretendard Medium'), url(../fonts/Pretendard-Medium.subset.woff2) format('woff2');}
+@font-face {font-family:'Pretendard'; font-weight:700; font-display:swap; src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.subset.woff2) format('woff2');}
+@font-face {font-family:'Pretendard'; font-weight:800; font-display:swap; src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.subset.woff2) format('woff2');}
+
+:root {
+  --theme: #92d050;          /* 호마다 바뀌는 대표색 (12월호 #92D050) */
+  --gray: #6d6d6d;
+  --footer: #636363;
+  --u: min(1px, 100vw / 1440);
+  --radius: calc(var(--u) * 40);
+  --shadow-text: 0 4px 4px rgba(0, 0, 0, .25);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: #fff; color: #222; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; word-break: keep-all; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+.blind { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap { width: 100%; max-width: 1440px; margin: 0 auto; }
+.inner { padding: 0 calc(var(--u) * 62) 0 calc(var(--u) * 57); }
+
+/* ---------- 상단 ---------- */
+.top { position: relative; height: calc(var(--u) * 210); }
+.top .slogan { position: absolute; left: calc(var(--u) * 60); top: calc(var(--u) * 50); width: calc(var(--u) * 223); height: calc(var(--u) * 44); border-radius: 66px; background: var(--theme); color: #fff; font-size: calc(var(--u) * 30); font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.top .logo { position: absolute; left: calc(var(--u) * 61); top: calc(var(--u) * 106.5); width: calc(var(--u) * 381); }
+.top .issue { position: absolute; left: calc(var(--u) * 462); top: calc(var(--u) * 104); color: var(--theme); font-size: calc(var(--u) * 30); font-weight: 700; line-height: 1.2; white-space: pre; }
+.top .util { position: absolute; right: calc(var(--u) * 77); top: calc(var(--u) * 57); color: var(--gray); font-size: calc(var(--u) * 16); font-weight: 700; }
+.top .util a:hover { color: var(--theme); }
+.top .gnb { position: absolute; right: calc(var(--u) * 62); top: calc(var(--u) * 111); display: flex; gap: calc(var(--u) * 22.3); }
+.top .gnb a { width: calc(var(--u) * 146.2); height: calc(var(--u) * 44); border-radius: 66px; background: var(--theme); color: #fff; font-size: calc(var(--u) * 16); font-weight: 700; display: flex; align-items: center; justify-content: center; white-space: nowrap; transition: filter .2s; }
+.top .gnb a:hover { filter: brightness(.9); }
+
+/* ---------- 표지 ---------- */
+.cover { display: block; aspect-ratio: 1440 / 810; overflow: hidden; }
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- 섹션 제목 ---------- */
+.sec { padding-top: calc(var(--u) * 40); }
+.sec-head { margin-bottom: calc(var(--u) * 40); }
+.sec-head h2 { color: var(--theme); font-size: calc(var(--u) * 55.58); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; }
+.sec-head p { margin-top: calc(var(--u) * 1); padding-left: calc(var(--u) * 3); color: var(--gray); font-size: calc(var(--u) * 21.58); font-weight: 500; }
+
+/* ---------- 카드 공통 ---------- */
+.card { position: relative; display: block; overflow: hidden; border-radius: var(--radius); isolation: isolate; }
+.card .bg { position: absolute; inset: 0; z-index: -2; }
+.card .bg img { position: absolute; max-width: none; }
+.card::after { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--dim, rgba(0, 0, 0, .2)); border-radius: inherit; transition: background .25s; }
+.card:hover::after, .card:focus-visible::after { background: var(--dim-hover, rgba(0, 0, 0, .05)); }
+.card .bg img.cover-fit { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card .title { color: #fff; text-shadow: var(--shadow-text); }
+.badge { display: inline-flex; align-items: center; justify-content: center; min-width: calc(var(--u) * 146.2); height: calc(var(--u) * 44); padding: 0 calc(var(--u) * 12); border-radius: 66px; background: var(--theme); color: #fff; font-size: calc(var(--u) * 26); font-weight: 700; white-space: nowrap; }
+.arrow { position: absolute; right: calc(var(--u) * 23); bottom: calc(var(--u) * 20); width: calc(var(--u) * 82); height: calc(var(--u) * 82); transition: transform .25s; }
+.card:hover .arrow { transform: translateX(calc(var(--u) * 8)); }
+
+/* ---------- Make Your DREAM ---------- */
+.dream-grid { display: grid; grid-template-columns: calc(var(--u) * 762) 1fr; gap: calc(var(--u) * 20); padding-left: calc(var(--u) * 3); }
+.dream-grid .side { display: grid; grid-template-rows: repeat(3, calc(var(--u) * 265)); gap: calc(var(--u) * 20); }
+.card-star { height: calc(var(--u) * 835); --dim: rgba(0, 0, 0, .22); }
+.card-star .badge { position: absolute; left: calc(var(--u) * 28); top: calc(var(--u) * 30); min-width: calc(var(--u) * 168); }
+.card-star .text { position: absolute; right: calc(var(--u) * 45); bottom: calc(var(--u) * 46); text-align: right; }
+.card-star .who { font-size: calc(var(--u) * 54.15); font-weight: 700; letter-spacing: -0.025em; }
+.card-star .who small { font-size: calc(var(--u) * 24.15); }
+.card-star .head { margin-top: calc(var(--u) * 16); font-size: calc(var(--u) * 49.92); font-weight: 800; letter-spacing: -0.065em; line-height: calc(var(--u) * 52); }
+.card-side .badge { position: absolute; left: calc(var(--u) * 19); top: calc(var(--u) * 30); }
+.card-side .title { position: absolute; left: calc(var(--u) * 19); bottom: calc(var(--u) * 23); font-size: calc(var(--u) * 40); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+.card-baeum { background: var(--theme); }
+.card-myway .badge, .card-field .badge { top: calc(var(--u) * 21); }
+.card-myway .title { bottom: calc(var(--u) * 10); }
+.card-field .title { bottom: calc(var(--u) * 6); }
+.card-baeum .bg img { left: calc(var(--u) * 243); top: calc(var(--u) * 44); width: calc(var(--u) * 279); }
+.card-myway .bg img.grid { inset: 0; width: 100%; height: 100%; }
+.card-myway .bg img.art { left: 55.81%; top: 21.13%; width: 41.55%; }
+
+/* ---------- Make Your TECH ---------- */
+.sec-dream { padding-top: calc(var(--u) * 13); }
+.sec-tech { padding-top: calc(var(--u) * 36); }
+.tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: calc(var(--u) * 20) calc(var(--u) * 37); }
+.tech-grid .card { height: calc(var(--u) * 578); }
+.tech-grid .title { position: absolute; left: calc(var(--u) * 31); top: calc(var(--u) * 30); font-size: calc(var(--u) * 55.58); font-weight: 700; letter-spacing: -0.025em; }
+.tech-grid .card:nth-child(even) .title { left: calc(var(--u) * 41); }
+.card-people { background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), var(--theme); }
+.card-people .bg img { left: 7.93%; top: 17.92%; width: 84.28%; }
+.card-nextpage, .card-trend { --dim: rgba(0, 0, 0, .42); }
+.card-trend .bg img { left: 0; top: -32.92%; width: 100%; }
+.card-sangsaeng { background: #137fd2; --dim: rgba(0, 54, 133, .4); --dim-hover: rgba(0, 54, 133, .2); }
+.card-sangsaeng .bg img { left: calc(var(--u) * 41 - 5.28% * 601 / 642); top: calc(9.79% - var(--u) * 2); width: calc(var(--u) * 601); }
+
+/* ---------- HRDK Innovation ---------- */
+.sec-innov { padding-top: calc(var(--u) * 68); }
+.innov-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: calc(var(--u) * 36); }
+.innov-grid .card { aspect-ratio: 642.8 / 800; box-shadow: 0 6px 8px rgba(0, 0, 0, .25); --dim: transparent; --dim-hover: rgba(255, 255, 255, .08); }
+
+/* ---------- Make Your HRDK ---------- */
+.sec-hrdk { padding-top: calc(var(--u) * 50); padding-bottom: calc(var(--u) * 50); }
+.hrdk-list { display: grid; gap: calc(var(--u) * 20); }
+.hrdk-list .card { height: calc(var(--u) * 265); }
+.hrdk-list .badge { position: absolute; left: 0; top: 0; min-width: calc(var(--u) * 173); }
+.hrdk-list .title { position: absolute; left: calc(var(--u) * 32); font-size: calc(var(--u) * 70); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; text-shadow: none; }
+.card-news { --dim: rgba(0, 0, 0, .22); }
+.card-news .bg img { left: 0; top: -95.92%; width: 100%; }
+.card-news .title { top: calc(var(--u) * 148); }
+.card-event { overflow: visible; z-index: 2; }
+.card-event .bg { border-radius: var(--radius); overflow: hidden; }
+.card-event .bg img { left: 0; top: -.07%; width: 100%; }
+.card-event .title { bottom: calc(var(--u) * 15); }
+.card-event .char { position: absolute; z-index: 1; pointer-events: none; }
+.card-event .char1 { left: 54.66%; bottom: -24.06%; width: 27.33%; }
+.card-event .char2 { left: 74.87%; bottom: -17.29%; width: 21.73%; }
+.card-event .title { z-index: 2; }
+.card-event::after { z-index: -1; }
+.card-calendar { background: linear-gradient(rgba(0, 0, 0, .11), rgba(0, 0, 0, .11)), var(--theme); --dim: transparent; --dim-hover: rgba(255, 255, 255, .08); }
+.card-calendar .icon { position: absolute; right: calc(var(--u) * 30); top: 0; width: calc(var(--u) * 140); }
+.card-calendar .title { top: calc(var(--u) * 59); font-size: calc(var(--u) * 74.23); }
+
+/* ---------- 하단 ---------- */
+.footer { background: var(--footer); color: #fff; }
+.footer .inner { position: relative; height: calc(var(--u) * 140); display: flex; align-items: center; }
+.footer .flogo { width: calc(var(--u) * 300); }
+.footer address { margin-left: calc(var(--u) * 38); font-style: normal; font-size: calc(var(--u) * 16); font-weight: 700; line-height: 1.55; }
+.footer .sns { margin-left: auto; display: flex; gap: calc(var(--u) * 20); }
+.footer .sns img { width: calc(var(--u) * 40); }
+
+/* ---------- 모바일 ---------- */
+@media (max-width: 767px) {
+  :root { --u: calc(100vw / 720); }
+  .top { height: auto; padding: 24px 16px 16px; display: grid; grid-template-columns: auto 1fr; gap: 10px 14px; align-items: end; }
+  .top > * { position: static !important; }
+  .top .slogan { grid-column: 1 / -1; grid-row: 2; width: auto; justify-self: start; padding: 0 16px; height: 32px; font-size: 18px; }
+  .top .logo { position: static; width: 170px; }
+  .top h1 { grid-row: 3; }
+  .top .issue { grid-row: 3; }
+  .top .issue { font-size: 16px; }
+  .top .util { grid-column: 1 / -1; grid-row: 1; justify-self: end; font-size: 13px; }
+  .top .gnb { grid-column: 1 / -1; grid-row: 4; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .top .gnb a { width: auto; height: 36px; font-size: 14px; }
+  .inner { padding: 0 16px; }
+  .sec-head h2 { font-size: 30px; }
+  .sec-head p { font-size: 15px; }
+  .sec-head { margin-bottom: 16px; }
+  .sec { padding-top: 40px; }
+  .badge { height: 30px; min-width: 0 !important; padding: 0 14px; font-size: 15px; }
+  .card { border-radius: 20px; }
+  .dream-grid, .tech-grid, .innov-grid { grid-template-columns: 1fr; gap: 12px; padding-left: 0; }
+  .dream-grid .side { grid-template-rows: none; gap: 12px; }
+  .card-star { height: auto; aspect-ratio: 762 / 835; }
+  .card-star .text { right: 18px; bottom: 20px; }
+  .card-star .who { font-size: 26px; } .card-star .who small { font-size: 13px; }
+  .card-star .head { margin-top: 6px; font-size: 24px; line-height: 1.15; }
+  .card-star .badge, .card-side .badge { left: 14px; top: 14px; }
+  .card-side { height: auto; aspect-ratio: 536 / 265; }
+  .card-side .title { left: 14px; bottom: 14px; font-size: 22px; }
+  .card-baeum .bg img { left: 45.3%; top: 16.6%; width: 52%; }
+  .tech-grid .card { height: auto; aspect-ratio: 642 / 578; }
+  .tech-grid .title, .tech-grid .card:nth-child(even) .title { left: 18px; top: 16px; font-size: 28px; }
+  .card-sangsaeng .bg img { left: 1.5%; top: 9.4%; width: 93.6%; }
+  .arrow { width: 44px; height: 44px; right: 12px; bottom: 10px; }
+  .hrdk-list { gap: 12px; }
+  .hrdk-list .card { height: 150px; }
+  .card-event .char1 { left: 50%; bottom: -10%; width: auto; height: 100%; }
+  .card-event .char2 { left: auto; right: 4%; bottom: -6%; width: auto; height: 88%; }
+  .hrdk-list .title { left: 16px; font-size: 24px; }
+  .card-news .title { top: auto; bottom: 16px; }
+  .card-news .bg img, .card-event .bg img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .card-event .title { bottom: 12px; }
+  .card-calendar .title { top: auto; bottom: 12px; font-size: 18px; }
+  .card-calendar .icon { width: 56px; right: 16px; }
+  .footer .inner { height: auto; padding: 24px 16px; flex-wrap: wrap; gap: 12px; }
+  .footer .flogo { width: 200px; }
+  .footer address { margin: 0; font-size: 13px; order: 3; flex-basis: 100%; }
+  .footer .sns img { width: 32px; }
+}
