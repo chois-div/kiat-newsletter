@@ -216,7 +216,7 @@ ul { list-style: none; }
 .cardnews img { width: 100%; }
 
 @media (max-width: 767px) {
-  .sub-hero { height: auto; aspect-ratio: 1440 / 590; min-height: 220px; }
+  .sub-hero { height: 240px; }
   .sub-hero .badge { left: 16px; top: 16px; }
   .sub-hero .kicker { left: 16px; top: auto; bottom: 64px; font-size: 13px; }
   .sub-hero h2 { left: 16px; right: 16px; top: auto; bottom: 18px; font-size: 26px; line-height: 1.2; letter-spacing: -0.04em; }
@@ -237,3 +237,67 @@ ul { list-style: none; }
 
 /* 상단 비주얼을 통이미지로 쓰는 페이지 */
 .sub-hero-img img { width: 100%; aspect-ratio: 1440 / 590; object-fit: cover; }
+
+/* 인터뷰 Q&A 기사 (현장 탐방기 등, 폭 1206, 왼쪽 117) */
+.qa { padding: calc(var(--u) * 54) calc(var(--u) * 117) calc(var(--u) * 110); display: flex; flex-direction: column; gap: calc(var(--u) * 10); color: #000; }
+.qa .label { align-self: flex-start; padding: calc(var(--u) * 22) calc(var(--u) * 24); border-radius: calc(var(--u) * 30); background: var(--theme); color: #fff; font-size: calc(var(--u) * 54.92); font-weight: 800; letter-spacing: -0.025em; line-height: calc(var(--u) * 50); }
+.qa h3, .qa .q { color: var(--theme); font-size: calc(var(--u) * 54.92); font-weight: 800; letter-spacing: -0.025em; line-height: 1.08; }
+.qa .q { line-height: 1.2; }
+.qa .a, .qa .lead { font-size: calc(var(--u) * 32.95); font-weight: 400; letter-spacing: -0.025em; line-height: calc(var(--u) * 43.93); }
+.qa .item { display: flex; flex-direction: column; gap: calc(var(--u) * 10); }
+.qa .pair { display: flex; gap: calc(var(--u) * 10.2); overflow: hidden; }
+.qa .pair img { width: calc(var(--u) * 598); }
+.qa .side { display: flex; gap: calc(var(--u) * 30); align-items: flex-start; }
+.qa .side > img { width: calc(var(--u) * 606); flex: none; }
+.qa .side .item { flex: 1; gap: 0; }
+@media (max-width: 767px) {
+  .qa { padding: 28px 16px 40px; gap: 14px; }
+  .qa .label { padding: 8px 14px; border-radius: 12px; font-size: 18px; line-height: 1.2; }
+  .qa h3, .qa .q { font-size: 21px; line-height: 1.3; }
+  .qa .a, .qa .lead { font-size: 16px; line-height: 1.7; }
+  .qa .pair img { width: calc(50% - 4px); }
+  .qa .pair { gap: 8px; }
+  .qa .side { flex-direction: column; gap: 14px; }
+  .qa .side > img { width: 100%; }
+}
+
+/* 보도형 기사 (CEO 혁신 프롬프트, 폭 1194, 왼쪽 123) */
+.news-article { padding: calc(var(--u) * 42) calc(var(--u) * 123) calc(var(--u) * 107); display: flex; flex-direction: column; gap: calc(var(--u) * 20); color: #262626; }
+.news-article h3 { color: var(--theme); font-size: calc(var(--u) * 60.92); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; text-align: center; }
+.news-article .sub { font-size: calc(var(--u) * 30); font-weight: 500; text-align: center; line-height: 1.2; }
+.news-article .body { font-size: calc(var(--u) * 30); font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; }
+.news-article .body p + p { margin-top: 1.2em; }
+.news-article img.round { border-radius: calc(var(--u) * 30); }
+.news-article hr { border: 0; border-top: 1px solid #b5b5b5; width: calc(var(--u) * 1143); margin: 0; }
+@media (max-width: 767px) {
+  .news-article { padding: 28px 16px 40px; gap: 14px; }
+  .news-article h3 { font-size: 22px; line-height: 1.3; }
+  .news-article .sub { font-size: 15px; line-height: 1.6; }
+  .news-article .body { font-size: 16px; line-height: 1.7; }
+  .news-article img.round { border-radius: 14px; }
+  .news-article hr { width: 100%; }
+}
+
+/* 번호가 붙은 소식 모음 (HRDK 액션 리포트, 폭 1280, 왼쪽 80) */
+.report { padding: calc(var(--u) * 54) calc(var(--u) * 80) calc(var(--u) * 80); display: flex; flex-direction: column; gap: calc(var(--u) * 30); color: #262626; }
+.report section { display: flex; flex-direction: column; gap: calc(var(--u) * 35); align-items: center; }
+.report section:first-child { gap: calc(var(--u) * 54); }
+.report .head { align-self: stretch; display: flex; gap: calc(var(--u) * 20); align-items: center; min-height: calc(var(--u) * 100); }
+.report .num { flex: none; width: calc(var(--u) * 100); height: calc(var(--u) * 100); background: var(--theme); color: #fff; font-size: calc(var(--u) * 60); font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.report h3 { color: var(--theme); font-size: calc(var(--u) * 40); font-weight: 800; letter-spacing: -0.025em; line-height: 1.2; }
+.report .body { align-self: stretch; font-size: calc(var(--u) * 30); font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; }
+.report .body p + p { margin-top: 1.2em; }
+.report hr { border: 0; border-top: 1px solid #b5b5b5; width: calc(var(--u) * 1018); margin: 0; }
+.report .group { display: flex; flex-direction: column; gap: calc(var(--u) * 20); align-items: center; }
+@media (max-width: 767px) {
+  .report { padding: 28px 16px 40px; gap: 32px; }
+  .report section, .report section:first-child, .report .group { gap: 16px; }
+  .report .head { gap: 12px; min-height: 0; align-items: flex-start; }
+  .report .num { width: 40px; height: 40px; font-size: 24px; }
+  .report h3 { font-size: 19px; line-height: 1.35; }
+  .report .body { font-size: 16px; line-height: 1.7; }
+  .report hr { width: 100%; }
+}
+@media (max-width: 767px) { .report img[style] { width: 100% !important; } }
+/* 모바일에서는 PC용 강제 줄바꿈을 풀어 자연스럽게 흐르게 한다 */
+@media (max-width: 767px) { .qa .lead br, .qa .a br, .news-article .body br, .news-article .sub br { display: none; } }
