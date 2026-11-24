@@ -1,0 +1,15 @@
+{
+  "_설명": "HRDK 웹진 호 정보. theme = 호마다 바뀌는 대표색.",
+  "year": 2026,
+  "month": 12,
+  "vol": 363,
+  "theme": "#92d050",
+  "slogan": "나를 만드는 배움",
+  "links": {
+    "prev_issue": "#",
+    "pdf": "#",
+    "youtube": "#",
+    "instagram": "#",
+    "facebook": "#"
+  }
+}

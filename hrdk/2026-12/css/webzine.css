@@ -174,3 +174,66 @@ ul { list-style: none; }
   .footer address { margin: 0; font-size: 13px; order: 3; flex-basis: 100%; }
   .footer .sns img { width: 32px; }
 }
+
+/* =========================================================
+   하위 페이지 공통
+   ========================================================= */
+@font-face {font-family:'Pretendard'; font-weight:400; font-display:swap; src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.subset.woff2) format('woff2');}
+
+/* 상단 비주얼 (1440×590) */
+.sub-hero { position: relative; height: calc(var(--u) * 590); overflow: hidden; isolation: isolate; color: #fff; }
+.sub-hero .bg { position: absolute; inset: 0; z-index: -1; }
+.sub-hero .bg img { position: absolute; max-width: none; }
+.sub-hero .bg img.cover-fit { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sub-hero .bg.dim::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, .2); }
+.sub-hero .badge { position: absolute; left: calc(var(--u) * 39); top: calc(var(--u) * 30); }
+.sub-hero .kicker { position: absolute; left: calc(var(--u) * 43); top: calc(var(--u) * 92); font-size: calc(var(--u) * 24.15); font-weight: 700; text-shadow: var(--shadow-text); }
+.sub-hero h2 { position: absolute; left: calc(var(--u) * 39); top: calc(var(--u) * 121); font-size: calc(var(--u) * 60.92); font-weight: 800; letter-spacing: -0.065em; line-height: calc(var(--u) * 62); text-shadow: var(--shadow-text); }
+
+/* 기사 본문 (폭 1319, 왼쪽 61) */
+.article { padding: calc(var(--u) * 80) calc(var(--u) * 60) calc(var(--u) * 14) calc(var(--u) * 61); display: flex; flex-direction: column; gap: calc(var(--u) * 20); color: #000; }
+.article h3 { color: var(--theme); font-size: calc(var(--u) * 40); font-weight: 800; letter-spacing: -0.025em; line-height: 1; margin-bottom: calc(var(--u) * 0); }
+.article .txt { font-size: calc(var(--u) * 30); font-weight: 400; letter-spacing: -0.025em; line-height: 1.2; }
+.article .block { display: flex; flex-direction: column; gap: calc(var(--u) * 20); }
+.article figure img, .article .ph { width: 100%; border-radius: calc(var(--u) * 30); }
+.article .row { display: flex; gap: calc(var(--u) * 20); align-items: flex-start; }
+.article .row > .block { flex: 0 0 calc(var(--u) * 646); }
+.article .row > figure { flex: 1; }
+.article .wide { margin: 0 calc(var(--u) * -6); }
+.article .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--u) * 15.2); }
+.article .grid2 img { border-radius: 0; }
+
+/* 인터뷰 표지 (인용문 + 큰 사진) */
+.interview-head { display: flex; gap: calc(var(--u) * 32); align-items: center; justify-content: center; }
+.interview-head .quote { flex: 0 0 auto; margin-left: calc(var(--u) * -5.5); text-align: right; }
+.interview-head blockquote { color: var(--theme); font-family: 'MYHaemalgeunSangsang', 'Pretendard', sans-serif; font-size: calc(var(--u) * 62.98); font-weight: 800; letter-spacing: -0.025em; line-height: 1.24; }
+.interview-head .who { margin-top: calc(var(--u) * 20); color: #070101; font-weight: 700; }
+.interview-head .who small { display: block; font-size: calc(var(--u) * 24); }
+.interview-head .who strong { display: block; font-size: calc(var(--u) * 34); font-weight: 700; }
+.interview-head figure { flex: 0 0 calc(var(--u) * 849); }
+
+/* 카드뉴스 (세로로 이어진 이미지) */
+.cardnews img { width: 100%; }
+
+@media (max-width: 767px) {
+  .sub-hero { height: auto; aspect-ratio: 1440 / 590; min-height: 220px; }
+  .sub-hero .badge { left: 16px; top: 16px; }
+  .sub-hero .kicker { left: 16px; top: auto; bottom: 64px; font-size: 13px; }
+  .sub-hero h2 { left: 16px; right: 16px; top: auto; bottom: 18px; font-size: 26px; line-height: 1.2; letter-spacing: -0.04em; }
+  .article { padding: 32px 16px 24px; gap: 16px; }
+  .article h3 { font-size: 21px; line-height: 1.3; }
+  .article .txt { font-size: 16px; line-height: 1.7; }
+  .article .txt p + p { margin-top: .6em; }
+  .article .block { gap: 10px; }
+  .article .row, .interview-head { flex-direction: column; gap: 16px; }
+  .article .row > .block, .article .row > figure, .interview-head figure { flex: none; width: 100%; }
+  .article .wide { margin: 0; }
+  .article figure img, .article .ph { border-radius: 14px; }
+  .article .grid2 { gap: 8px; }
+  .interview-head .quote { margin: 0; align-self: stretch; }
+  .interview-head blockquote { font-size: 30px; }
+  .interview-head .who small { font-size: 14px; } .interview-head .who strong { font-size: 19px; }
+}
+
+/* 상단 비주얼을 통이미지로 쓰는 페이지 */
+.sub-hero-img img { width: 100%; aspect-ratio: 1440 / 590; object-fit: cover; }

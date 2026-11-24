@@ -1,0 +1,16 @@
+{# 카드뉴스 페이지: 상단 통이미지(선택) + 세로로 이어진 이미지.
+   하위 템플릿에서 folder, hero_alt, cards(list of alt) 를 set 한다. #}
+{% extends "base.html" %}
+{% block og_image %}images/{{ folder }}/{{ 'hero.jpg' if hero_alt else '01.jpg' }}{% endblock %}
+{% block content %}
+  <main>
+    {% if hero_alt %}
+    <section class="sub-hero-img"><h2><img src="images/{{ folder }}/hero.jpg" alt="{{ hero_alt }}"></h2></section>
+    {% endif %}
+    <section class="cardnews">
+      {% for alt in cards %}
+      <img src="images/{{ folder }}/{{ '%02d' % loop.index }}.jpg" alt="{{ alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+      {% endfor %}
+    </section>
+  </main>
+{% endblock %}

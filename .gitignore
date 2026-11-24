@@ -3,3 +3,4 @@ issues/*/dist/
 *.zip
 __pycache__/
 .DS_Store
+hrdk/*/dist/

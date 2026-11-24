@@ -1,33 +1,5 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRDKorea 웹진 2026년 12월호 Vol.363 | 한국산업인력공단</title>
-<meta name="description" content="나를 만드는 배움 - 한국산업인력공단 웹진 HRDKorea 2026년 12월호">
-<meta property="og:title" content="HRDKorea 웹진 2026년 12월호 Vol.363">
-<meta property="og:description" content="기술로 산업을 이끌고 미래를 키우다 - 2026 직업능력개발유공 산업포장 수상자">
-<meta property="og:image" content="images/cover.jpg">
-<link rel="stylesheet" href="../shared/css/webzine.css">
-<style>:root { --theme: #92d050; }</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header class="top">
-    <p class="slogan">나를 만드는 배움</p>
-    <h1><img class="logo" src="images/logo.png" alt="HRDKorea"></h1>
-    <p class="issue">2026  12월
-Vol. 363</p>
-    <p class="util"><a href="#">이전호 가기</a> l <a href="#">PDF 보기</a></p>
-    <nav class="gnb" aria-label="섹션 바로가기">
-      <a href="#dream">Make Your DREAM</a>
-      <a href="#tech">Make Your TECH</a>
-      <a href="#innovation">Make Your LIFE</a>
-      <a href="#hrdk">Make Your HRDK</a>
-    </nav>
-  </header>
-
+{% extends "base.html" %}
+{% block content %}
   <a class="cover" href="star.html"><img src="images/cover.jpg" alt="나를 만드는 배움 10 - 기술로 산업을 이끌고 미래를 키우다, 2026 직업능력개발유공 산업포장 수상자"></a>
 
   <main>
@@ -129,19 +101,4 @@ Vol. 363</p>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="inner">
-      <img class="flogo" src="images/footer_logo.png" alt="한국산업인력공단">
-      <address>(우)44538 울산광역시 중구 종가로 345 한국산업인력공단<br>1644-8000(유료)</address>
-      <ul class="sns">
-        <li><a href="#" target="_blank" rel="noopener" title="유튜브 (새 창)"><img src="images/icon_yt.png" alt="유튜브"></a></li>
-        <li><a href="#" target="_blank" rel="noopener" title="인스타그램 (새 창)"><img src="images/icon_insta.png" alt="인스타그램"></a></li>
-        <li><a href="#" target="_blank" rel="noopener" title="페이스북 (새 창)"><img src="images/icon_fb.png" alt="페이스북"></a></li>
-      </ul>
-    </div>
-  </footer>
-
-</div>
-</body>
-</html>
+{% endblock %}

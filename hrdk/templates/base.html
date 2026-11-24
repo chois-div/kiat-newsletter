@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}{% endblock %}HRDKorea 웹진 {{ year }}년 {{ month }}월호 Vol.{{ vol }} | 한국산업인력공단</title>
+<meta name="description" content="{{ slogan }} - 한국산업인력공단 웹진 HRDKorea {{ year }}년 {{ month }}월호">
+<meta property="og:title" content="{{ self.title() }}HRDKorea 웹진 {{ year }}년 {{ month }}월호 Vol.{{ vol }}">
+<meta property="og:image" content="{% block og_image %}images/cover.jpg{% endblock %}">
+<link rel="stylesheet" href="css/webzine.css">
+<style>:root { --theme: {{ theme }}; }</style>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<div class="wrap">
+
+  <header class="top">
+    <p class="slogan">{{ slogan }}</p>
+    <h1><a href="index.html"><img class="logo" src="images/logo.png" alt="HRDKorea 홈"></a></h1>
+    <p class="issue">{{ year }}  {{ month }}월
+Vol. {{ vol }}</p>
+    <p class="util"><a href="{{ links.prev_issue }}">이전호 가기</a> l <a href="{{ links.pdf }}">PDF 보기</a></p>
+    <nav class="gnb" aria-label="섹션 바로가기">
+      <a href="index.html#dream">Make Your DREAM</a>
+      <a href="index.html#tech">Make Your TECH</a>
+      <a href="index.html#innovation">Make Your LIFE</a>
+      <a href="index.html#hrdk">Make Your HRDK</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="footer">
+    <div class="inner">
+      <img class="flogo" src="images/footer_logo.png" alt="한국산업인력공단">
+      <address>(우)44538 울산광역시 중구 종가로 345 한국산업인력공단<br>1644-8000(유료)</address>
+      <ul class="sns">
+        <li><a href="{{ links.youtube }}" target="_blank" rel="noopener" title="유튜브 (새 창)"><img src="images/icon_yt.png" alt="유튜브"></a></li>
+        <li><a href="{{ links.instagram }}" target="_blank" rel="noopener" title="인스타그램 (새 창)"><img src="images/icon_insta.png" alt="인스타그램"></a></li>
+        <li><a href="{{ links.facebook }}" target="_blank" rel="noopener" title="페이스북 (새 창)"><img src="images/icon_fb.png" alt="페이스북"></a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
