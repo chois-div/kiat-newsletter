@@ -15,6 +15,7 @@
    - **MO** 프레임 전체(800×1817) → `email/kiat202612.jpg`
 4. GitHub에 올린다. 반영되면 이메일 HTML 주소의 소스를 발송 시스템에 붙여넣는다.
 5. `python3 build.py 2026-12`로 만든 `dist/KIAT_웹진_Vol87.zip`을 KIAT에 전달한다. KIAT가 `kiat.or.kr/files/ebook/Vol87/`에 그대로 올린다 (공식 웹진 주소).
+6. 같은 명령으로 만든 `dist/[KIAT] 뉴스레터 2026년12월.zip`을 풀어 공유 드라이브 `뉴스레터/12월/`에 보관한다. 10월 폴더와 같은 구성이다. 썸네일은 `issues/2026-12/thumbnail.jpg`(264×170)에 넣어둔다.
 
 로컬에서 미리 확인하려면 `python3 build.py 2026-12`를 실행한다 (최초 1회 `pip install jinja2` 필요). `TODO`로 남은 링크나 빠진 이미지가 있으면 경고가 나온다.
 

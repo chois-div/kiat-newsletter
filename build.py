@@ -81,7 +81,24 @@ def build_issue(issue: str) -> tuple[dict, list[str]]:
     shutil.make_archive(str(dist / f"KIAT_웹진_{vol_dir}"), "zip", root_dir=tmp, base_dir=vol_dir)
     shutil.rmtree(tmp)
 
+    # 공유 드라이브 보관용: 10월 폴더와 같은 구성
+    #   [KIAT] 뉴스레터 2026년11월/  index.html, css/, js/, fonts/, images/,
+    #                                kiat_뉴스레터_26.11.html, kiat202611.jpg, 11월_웹진-썸네일.jpg
+    pkg_name = f"[KIAT] 뉴스레터 {y}년{m}월"
+    pkg = tmp / pkg_name
+    shutil.copytree(web, pkg)
+    shutil.copy2(dist / email_name, pkg / email_name)
+    if (issue_dir / "email" / email_img).exists():
+        shutil.copy2(issue_dir / "email" / email_img, pkg / email_img)
+    if (issue_dir / "thumbnail.jpg").exists():
+        shutil.copy2(issue_dir / "thumbnail.jpg", pkg / f"{m}월_웹진-썸네일.jpg")
+    else:
+        problems.append("썸네일 없음: thumbnail.jpg (264x170, KIAT NEWSLETTER / VOL.NN YYYY.MM)")
+    shutil.make_archive(str(dist / pkg_name), "zip", root_dir=tmp, base_dir=pkg_name)
+    shutil.rmtree(tmp)
+
     print(f"[{issue}] 웹진: {web / 'index.html'}")
+    print(f"[{issue}] 보관용 폴더: {dist / (pkg_name + '.zip')}")
     print(f"[{issue}] 이메일: {dist / email_name}")
     print(f"[{issue}] 이메일 이미지 주소: {ctx['email']['image_url']}")
     print(f"[{issue}] KIAT 전달용: {dist / f'KIAT_웹진_{vol_dir}.zip'}  →  {official}")
